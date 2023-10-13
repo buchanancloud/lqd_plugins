@@ -1,0 +1,53 @@
+/* Styling for the horizontal footer bar */
+.lqd-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Full width for the footer bar */
+  height: <?php echo esc_attr(get_option('lqd_height', '50')); ?>px; /* Height for the horizontal footer bar */
+  /* ... Other styles for the horizontal bar ... */
+}
+
+/* Styling for the individual columns in the bars */
+.lqd-column {
+  flex: 1;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+/* Styling for the toggle button in both bars */
+.lqd-toggle {
+  position: absolute;
+  top: -2em;
+  right: 1em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+/* Styling for the vertical bar */
+.lqd-vertical-bar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 100%; /* Full height for the vertical bar */
+  width: <?php echo esc_attr(get_option('lqd_width', '50')); ?>px; /* Width of the vertical bar */
+  /* ... Other styles for the vertical bar ... */
+}
+
+/* Tablet in landscape mode and larger */
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  .lqd-bar {
+    /* Change from bottom to right */
+    bottom: unset;
+    right: 0;
+
+    /* Vertically stack the columns */
+    flex-direction: column;
+  }
+
+  .lqd-vertical-bar {
+    /* Adjust the position for tablet in landscape */
+    bottom: unset;
+    right: 0;
+  }
+}
